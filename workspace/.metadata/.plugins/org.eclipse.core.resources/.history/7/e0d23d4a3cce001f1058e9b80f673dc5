@@ -1,0 +1,52 @@
+package com.koreait.app;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class TestServlet
+ */
+@WebServlet("/Hello") // url mapping 의미
+public class TestServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public TestServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    //doGet()메소드는 get 요청이 들어오면 실행되는 메소드
+    //요청을 담아줄 매개변수와 응답을 담을 매개변수 2개가 필요하다
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// @getWriter() 메소드는 화면에 출력을 하기 위해 사용하며 출력 스트림을 반환(출력하는 객체) 이 객체를 활용하면 사용자의 화면에 글씨를 뿌려줄 수 있다
+		// append() 메소드는 문자열을 연결해주는 메소드
+		// request.getContextPath() : 리퀘스트 객체로부터 ContextPath라는 것을 얻어오는데 컨텍스트패스는 현재 우리의 사잉트, 우리의 웹어플리케이션의 루트경로를 의미한다
+		// 루트경로 : 최상위 경로를 의미하며 이 서버의 가장 상위 경로를 의미하는 것이다.
+		
+		// http://localhost:8888/day01/Hello
+		// day01 : 컨텍스트 패스 경로(루트경로)
+		// /Hello : 우리 서버에 있는 서블릿의 경로
+		response.getWriter().append("Servered at : ").append(request.getContextPath()); // root경로(최상위 경로) = getContextPath = 도메인주소
+																					 // 
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

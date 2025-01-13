@@ -1,0 +1,17 @@
+<!-- 꼭 존재해야함 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>안녕하세요!!</h1>
+	<form action="Hello" method="get"> <!-- 서블릿주소 /Hello 에 get방식으로 전송한다 -->
+		<input type="text" name="user_name" placeholder="이름">
+		<button>전송</button>
+	</form> <!--  form 태그는 action과 method 속성이 있다 -->
+</body>
+</html>

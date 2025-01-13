@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>GET / POST 예제</h1>
+	<form action="" method="get">
+		<label for="name">이름(GET)</label>
+		<input type="text" id= "name" name="userName" placeholder="이름 입력"><br> <!-- id를 name으로해야 label과 연동가능 -->
+		<button type="submit">GET요청</button>
+	</form>
+	
+	<h1>forward / redirect</h1>
+	<form action="" method="post">
+		<label for="email">이메일(POST) : </label>
+		<input tpe="email" id="email" name="email"><br>
+		<button type="submit">POST 요청</button>
+	</form>
+</body>
+</html>
