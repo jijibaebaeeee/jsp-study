@@ -17,7 +17,7 @@
   
   <servlet-mapping>
   	<servlet-name>MyServlet1</servlet-name>
-  	<url-pattern>/task</url-pattern>
+  	<url-pattern>/MyServlet1</url-pattern>
   </servlet-mapping>
   
     <servlet>
@@ -27,7 +27,7 @@
   
   <servlet-mapping>
   	<servlet-name>MyServlet2</servlet-name>
-  	<url-pattern>/task</url-pattern>
+  	<url-pattern>/MyServlet2</url-pattern>
   </servlet-mapping>
   
   

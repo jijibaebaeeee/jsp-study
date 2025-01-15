@@ -9,7 +9,16 @@
 <body>
 	<h2><%=request.getAttribute("userName")%>님 환영합니다</h2>
 	<h2><%=request.getAttribute("userName") %>님의 2025년 나이는 <%request.getAttribute("userAge"); %>살 입니다</h2>
-
-
+	<h2>성별 : <%=request.getAttribute("gender") %></h2>
+	<h2>취미 : <% 
+		String[] hobbies = (String[]) request.getAttribute("hobbies");
+		if(hobbies != null){
+			for(String hobby : hobbies){
+				out.print(hobby + " ");
+			}
+		}else{
+			out.print("취미가 없습니다.");
+		}
+				%></h2>
 </body>
 </html>
