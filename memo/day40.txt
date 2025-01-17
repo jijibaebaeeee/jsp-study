@@ -1,0 +1,30 @@
+day40
+
+1. 쿠키와 세션
+  1) 쿠키(Cookie)
+	웹서버에서 클라이언트에게 전송해주는 작은 데이터 조각이며 사용자의 웹 브라우저에 저장된다
+	
+
+
+  4) 동작방식
+	- 클라이언트가 서버에 요청을 보낸다
+	- 서버는 클라이언트를 식별할 수 있는 세션id를 발급한다
+	- 세션ID는 클라이언트에게 쿠키로 전송한다
+	- 이후 클라이언트는 요청을 보낼때마다 세션ID를 담은 쿠키를 보내게된다
+	- 서버에서는 세션ID를 서버에 있는 세션과 비교하여 사용자를 식별한다
+	- 그 외에도 세션에 데이터를 저장하여 사용할 수 있다
+
+  5) 세션의 사용
+	- 세션얻어오기
+	HttpSession session = request.getSession(); // 현재요청에 대한 세션을 생성
+	
+	- 세션에 데이터 저장하기
+	session.setAttribute("name", "홍길동");
+
+	- 세션에 저장된 데이터를 가져오기
+	String name = (String) session.getAttribute("name"); // 반환타입 Object
+
+	- 세션에 저장된 데이터를 지우기
+	session.removeAtrribute("name");
+	- 세션 종료하기
+	session.invalidate()l

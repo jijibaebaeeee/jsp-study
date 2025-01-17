@@ -36,7 +36,7 @@ jstl에서 제공하는 ${pageContext.request.contextPath}를 사용하여 루�
             </div>
          </div>
          <div class="btn">
-            <button>회원가입</button>
+            <button>회원가입 요청</button>
          </div>
       </form>   
    </main>

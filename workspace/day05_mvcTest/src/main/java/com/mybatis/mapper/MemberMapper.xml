@@ -5,5 +5,18 @@
 		insert into tbl_member(member_number, member_id, member_password, member_name, member_age, member_gender)
 		values(seq_member.nextVal, #{memberId}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberGender})
 	</insert>
+	
+<!-- 	<select id="login" parameterType="map" resultType="int"> 이 첫줄은 자바에서 사용하는 타입을 넣어야함
+   		select count(*) 
+   		from tbl_member
+   		where member_id = #{memberId} and member_password = #{memberPassword} {} 부분은 MyServlet에서 처리한 변수명이 들어감
+   </select> -->
+   
+   <!-- 이거는 map안쓰고 DTO 쓰는 버전 -->
+   	<select id="login" parameterType="memberDTO" resultType="memberDTO"> <!-- 이 첫줄은 자바에서 사용하는 타입을 넣어야함 -->
+   		select count(*) 
+   		from tbl_member
+   		where member_id = #{memberId} and member_password = #{memberPassword} <!-- {} 부분은 MyServlet에서 처리한 변수명이 들어감 -->
+   </select>
 
 </mapper>
